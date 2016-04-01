@@ -54,7 +54,7 @@ Singularity.SearchPage = Class.extend({
 		
 		this.$obj.addClass("SearchObj");
 		this.$logo = $("<div class='logo' />").appendTo( this.$obj );
-		this.$tagLine = $("<div class='tagLine'>Your Journey Begins Here</div>").appendTo( this.$obj );
+		this.$tagLine = $("<div class='tagLine'>Your single source</div>").appendTo( this.$obj );
 		this.$searchBox = $("<input type='text' class='searchBox' />")	
 			.keyup( function(e){
 				self.props.hasSearched = (self.$searchBox.val() != "");
