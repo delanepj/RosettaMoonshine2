@@ -10,9 +10,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 html, button, input, select, textarea { color: #222; }
-
-body { font-size: 1em; line-height: 1.4; }
-
+html, body { width:100%; height:100%;}
+body { padding:0; margin:0; font-size: 1em; line-height: 1.4; background:transparent url(../images/background.jpg) 0 0/100% 100% no-repeat; }
+* { outline:none; }
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate.
@@ -74,7 +74,7 @@ textarea { resize: vertical; }
 
 /* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
 .clearfix { *zoom: 1; }
-
+#rosetta-logo { width:101px; height:16px; background:transparent url(../images/rosetta-logo.png) no-repeat; position:absolute; right:15px; top:15px; z-index:9999; }
 @font-face { font-family: 'brandonLight'; src: url('/Fonts/Brandon Grotesque Light.otf') format('truetype'); }
 
 
@@ -84,15 +84,16 @@ textarea { resize: vertical; }
    ========================================================================== */
 
 /*--- Search Component ---*/
-.logo         { position:relative; width:100px; left:50%; margin-left:-50px;  height:100px; background:#333; margin-top:100px;}
-.tagLine      { position:relative; width:500px; left:50%; margin-left:-250px; height:100px; text-align:center; font-family:brandonLight; font-size:44px;}
-.searchBox    { position:relative; width:500px; left:50%; margin-left:-250px; height:32px; z-index:10}
+.logo         { position:relative; width:92px; left:50%; height:100px; background:transparent url(../images/singularity-logo.png) no-repeat; margin:100px 0 20px -46px; }
+.tagLine      { position:relative; width:550px; left:50%; text-align:center; font-family:brandonLight; font-size:50px; color:#FFF; margin:0 0 10px -275px; text-transform:uppercase; }
+.searchBox    { text-align:center; color:#FFF; font-size:50px; font-family:brandonLight; position:relative; width:840px; left:50%; margin-left:-420px; height:100px; z-index:10; background:none; border:none; border-bottom:2px solid #FFF; }
 
 .Searched .tagLine      { height:5px; opacity:0;}
-.Searched .logo         { display:inline-block; margin-top:10px; margin-left:0px; left:10px; float:left; position:inital;}
-.Searched .searchBox    { height:32px; left:0px; margin-left:20px; margin-top:30px;}
+.Searched .logo         { background-image:url(../images/singularity-red-logo.png); display:inline-block; margin-top:35px; margin-left:0px; left:10px; float:left; position:inital;}
+.Searched .searchBox    { left:0px; margin-left:40px; margin-top:8px; text-align:left; }
 
-.searchResults { position:absolute; top:120px; left:10px; height: 600px; width:100%; overflow-x:auto; overflow-y:hidden; white-space: nowrap;}
+.searchResults { display:none; position:absolute; top:170px; left:0; height: 600px; width:100%; overflow-x:auto; overflow-y:hidden; white-space: nowrap; background-color:#e9e9e9; }
+.Searched .searchResults { display:block; }
 .searchResultSection { position:absolute; top:0px; left:0px; opacity:0; width:300px; height:600px; background:#EEE; }
 .searchResultItem { position:relative; }
 
