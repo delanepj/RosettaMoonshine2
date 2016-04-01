@@ -16,7 +16,7 @@ module.exports = router;
 
 var fullTimeEmployeeQuery = "select first_name,last_name,level,discipline,location,career_manager,email_address,full_time,skill_name,description from Employee e inner join EmployeeToSkill ets inner join Skill s where e.employee_id = ets.employee_id and s.skill_id = ets.skill_id';"
 
-var getEmployeesWithSkillsQuery="select first_name,last_name,s.skill_name, c.client_name from Employee e inner join EmployeeToSkill ets inner join Skill s inner join EmployeeToProject etp inner join Project p inner join Client c where ets.employee_id = e.employee_id and s.skill_id = ets.skill_id  and etp.employee_id = e.employee_id and p.project_id=etp.project_id and c.client_id = p.client_id and skill_name ="
+var getEmployeesWithSkillsQuery="select first_name,last_name,s.skill_name, c.client_name,pt.project_type_name from Employee e inner join EmployeeToSkill ets  inner join Skill s inner join EmployeeToProject etp inner join Project p inner join Client c inner join ProjectToProjectType ptpt inner join ProjectType pt where ets.employee_id = e.employee_id and s.skill_id = ets.skill_id  and etp.employee_id = e.employee_id and p.project_id=etp.project_id and c.client_id = p.client_id and p.project_id = ptpt.project_id and ptpt.project_id = p.project_id and ptpt.project_type_id = pt.project_type_id and project_type_name != 'UNKNOWN' and skill_name ="
 
 
 function getAllEmployees(req,res) {

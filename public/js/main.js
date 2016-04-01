@@ -111,6 +111,20 @@ Singularity.SearchPage = Class.extend({
 						var index = 3;
 						var $result = $("<div class='searchResultSection name' />").appendTo( self.$results);
 						
+						$("<div class='title'>Project Type</div>").appendTo( $result );
+						
+						$result.delay(50*index).animate({opacity:1}, 300 );
+						$result.css( { left:305 * (index-1)} );
+						
+						for( resultName in self.searchResults ){
+							// Project Type column
+							$("<div class='searchResultItem'>" + self.searchResults[resultName].project_type_name + "</div>").appendTo( $result );
+						}
+						
+						
+						var index = 4;
+						var $result = $("<div class='searchResultSection name' />").appendTo( self.$results);
+						
 						$("<div class='title'>Skill</div>").appendTo( $result );
 						
 						$result.delay(50*index).animate({opacity:1}, 300 );
