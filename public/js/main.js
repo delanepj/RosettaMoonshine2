@@ -95,8 +95,20 @@ Singularity.SearchPage = Class.extend({
 							$("<div class='searchResultItem'>" + self.searchResults[resultName].first_name + ' ' +  self.searchResults[resultName].last_name + "</div>").appendTo( $result );
 						}
 						
-						// TO-DO - Fix logic for looping and placing divs
 						var index = 2;
+						var $result = $("<div class='searchResultSection name' />").appendTo( self.$results);
+						
+						$("<div class='title'>Clients</div>").appendTo( $result );
+						
+						$result.delay(50*index).animate({opacity:1}, 300 );
+						$result.css( { left:305 * (index-1)} );
+						
+						for( resultName in self.searchResults ){
+							// Skill column
+							$("<div class='searchResultItem'>" + self.searchResults[resultName].client_name + "</div>").appendTo( $result );
+						}
+						
+						var index = 3;
 						var $result = $("<div class='searchResultSection name' />").appendTo( self.$results);
 						
 						$("<div class='title'>Skill</div>").appendTo( $result );
