@@ -75,7 +75,7 @@ textarea { resize: vertical; }
 /* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
 .clearfix { *zoom: 1; }
 
-@font-face { font-family: 'brandonLight'; src: url('../fonts/Brandon Grotesque Light.otf') format('truetype'); }
+@font-face { font-family: 'brandonLight'; src: url('/Fonts/Brandon Grotesque Light.otf') format('truetype'); }
 
 
 
