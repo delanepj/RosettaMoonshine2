@@ -42,7 +42,7 @@ $.fn.searchPage = function( sage, options ){ //Core Line Extension
 Singularity.SearchPage = Class.extend({
 	defaults:{
 		hasSearched:false,
-		searchResultsURL:"data/searchResults.json"
+		searchResultsURL:"/rest/getEmployeesWithSkills"
 		
 	},
 
@@ -56,7 +56,7 @@ Singularity.SearchPage = Class.extend({
 		this.$logo = $("<div class='logo' />").appendTo( this.$obj );
 		this.$tagLine = $("<div class='tagLine'>Your Journey Begins Here</div>").appendTo( this.$obj );
 		this.$searchBox = $("<input type='text' class='searchBox' />")	
-			.keypress( function(e){
+			.keyup( function(e){
 				self.props.hasSearched = (self.$searchBox.val() != "");
 				self.render();
 			})
@@ -72,24 +72,29 @@ Singularity.SearchPage = Class.extend({
 		if( this.props.hasSearched ){
 			this.$obj.addClass( "Searched" );
 			this.$results.html("");
-
+			
 			$.ajax({
 				url: self.props.searchResultsURL,
-				data: {}, //The search box can be accessed with: self.$searchBox.val()
+				data: {skill:self.$searchBox.val()},
 				success: function(json){
-					self.searchResults = JSON.parse(json);
-				
-					var index = 0;
-					for( resultName in self.searchResults ){
-						index++;
-						var $result = $("<div class='searchResultSection' />").appendTo( self.$results);
+					if(!$.isEmptyObject(json)){
+						self.searchResults = json;
+						
+						
+						// TO-DO - Fix logic for looping and placing divs
+						var index = 1;
+						var $result = $("<div class='searchResultSection name' />").appendTo( self.$results);
+						
+						$("<div class='title'>People</div>").appendTo( $result );
+						
 						$result.delay(50*index).animate({opacity:1}, 300 );
 						$result.css( { left:305 * (index-1)} );
-						$("<div class='title'>" + resultName + "</div>").appendTo( $result );
-						for( var i=0; i<self.searchResults[resultName].length; i++ ){
-							$("<div class='searchResultItem'>" + self.searchResults[resultName][i] + "</div>").appendTo( $result );
+						
+						for( resultName in self.searchResults ){
+							// Name column
+							$("<div class='searchResultItem'>" + self.searchResults[resultName].first_name + ' ' +  self.searchResults[resultName].last_name + "</div>").appendTo( $result );
 						}
-					}			
+					}
 				}
 			});
 
