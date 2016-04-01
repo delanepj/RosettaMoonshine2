@@ -76,6 +76,7 @@ textarea { resize: vertical; }
 .clearfix { *zoom: 1; }
 #rosetta-logo { width:101px; height:16px; background:transparent url(../images/rosetta-logo.png) no-repeat; position:absolute; right:15px; top:15px; z-index:9999; }
 @font-face { font-family: 'brandonLight'; src: url('/Fonts/Brandon Grotesque Light.otf') format('truetype'); }
+@font-face { font-family: 'brandonMedium'; src: url('/Fonts/Brandon Grotesque Medium.otf') format('truetype'); }
 
 
 
@@ -92,9 +93,11 @@ textarea { resize: vertical; }
 .Searched .logo         { background-image:url(../images/singularity-red-logo.png); display:inline-block; margin-top:35px; margin-left:0px; left:10px; float:left; position:inital;}
 .Searched .searchBox    { left:0px; margin-left:40px; margin-top:8px; text-align:left; }
 
-.searchResults { display:none; position:absolute; top:170px; left:0; height: 600px; width:100%; overflow-x:auto; overflow-y:hidden; white-space: nowrap; background-color:#e9e9e9; }
+.searchResults { display:none; position:absolute; top:170px; left:0; height: 700px; width:100%; overflow-x:auto; overflow-y:hidden; white-space: nowrap; background-color:#e9e9e9; }
 .Searched .searchResults { display:block; }
-.searchResultSection { position:absolute; top:0px; left:0px; opacity:0; width:300px; height:600px; background:#EEE; }
-.searchResultItem { position:relative; }
+.searchResultSection { position:absolute; top:0px; left:0px; opacity:0; width:300px; height:600px; }
+.searchResultItem { position:relative; font-size:15px; font-family:brandonLight; color:#3a2b58; line-height:2; }
+
+.searchResults .title { font-size:18px; text-transform:uppercase; color:#3a2b58; font-family:brandonMedium; }
 
 
