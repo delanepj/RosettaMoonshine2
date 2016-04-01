@@ -14,7 +14,7 @@ var pool = mysql.createPool({
 
 module.exports = router;
 
-var fullTimeEmployeeQuery = "select first_name,last_name,level,discipline,location,career_manager,email_address,full_time,skill_name,description from Employee e inner join EmployeeToSkill ets inner join Skill s where e.employee_id = ets.employee_id and s.skill_id = ets.skill_id and status ='available';"
+var fullTimeEmployeeQuery = "select first_name,last_name,level,discipline,location,career_manager,email_address,full_time,skill_name,description from Employee e inner join EmployeeToSkill ets inner join Skill s where e.employee_id = ets.employee_id and s.skill_id = ets.skill_id';"
 
 function getAllEmployees(req,res) {
     

@@ -1,0 +1,99 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html, button, input, select, textarea { color: #222; }
+
+body { font-size: 1em; line-height: 1.4; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
+
+/* A better looking default horizontal rule */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+img { vertical-align: middle; }
+
+/* Remove default fieldset styles. */
+fieldset { border: 0; margin: 0; padding: 0; }
+
+
+/* Allow only vertical resizing of textareas. */
+textarea { resize: vertical; }
+
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe { margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0; }
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir { background-color: transparent; border: 0; overflow: hidden;
+    *text-indent: -9999px; /* IE 6/7 fallback */
+}
+.ir:before { content: ""; display: block; width: 0; height: 100%; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/*Clearfix: contain floats*/
+.clearfix:before,
+.clearfix:after { content: " "; /* 1 */ display: table; /* 2 */ }
+.clearfix:after { clear: both; }
+
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
+.clearfix { *zoom: 1; }
+
+@font-face { font-family: 'brandonLight'; src: url('../fonts/Brandon Grotesque Light.otf') format('truetype'); }
+
+
+
+/* ==========================================================================
+   Author Defined Classes
+   ========================================================================== */
+
+/*--- Search Component ---*/
+.logo         { position:relative; width:100px; left:50%; margin-left:-50px;  height:100px; background:#333; margin-top:100px;}
+.tagLine      { position:relative; width:500px; left:50%; margin-left:-250px; height:100px; text-align:center; font-family:brandonLight; font-size:44px;}
+.searchBox    { position:relative; width:500px; left:50%; margin-left:-250px; height:32px; z-index:10}
+
+.Searched .tagLine      { height:5px; opacity:0;}
+.Searched .logo         { display:inline-block; margin-top:10px; margin-left:0px; left:10px; float:left; position:inital;}
+.Searched .searchBox    { height:32px; left:0px; margin-left:20px; margin-top:30px;}
+
+.searchResults { position:absolute; top:120px; left:10px; height: 600px; width:100%; overflow-x:auto; overflow-y:hidden; white-space: nowrap;}
+.searchResultSection { position:absolute; top:0px; left:0px; opacity:0; width:300px; height:600px; background:#EEE; }
+.searchResultItem { position:relative; }
+
+
